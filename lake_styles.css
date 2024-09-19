@@ -1,0 +1,156 @@
+﻿@charset "UTF-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: Tianzong SU
+   Date:   11/9/2024
+   
+   Filename: lake_styles.css
+
+*/
+
+@font-face {
+   font-family: 'woff_left_h';
+   src: url('cac_champagne.woff') format('woff'),
+        url('cac_champagne.ttf') format('ttf');
+}
+@font-face {
+   font-family: 'woff_right_h';
+   src: url('DobkinPlain.woff') format('woff'),
+        url('DobkinPlain.ttf') format('ttf');
+}
+
+/* Overall page styles (页面整体样式) */
+body {
+   display: grid; 
+   grid-template-columns: 67% 33%; /* Define two columns (定义两列) */
+   grid-template-areas: 
+       "header header"
+       "leftcol rightcol"
+       "footer footer"; /* Define grid areas (定义网格区域) */
+   background-color: #cbcc8a; /* Light yellow background (浅黄色背景) */
+   color: #fff; /* Text color (文字颜色) */
+}
+
+/* Navigation bar (导航栏) */
+header nav {
+   background-color: #784b76; /* Purple background (紫色背景) */
+   padding: 10px; /* Add padding to give some space around the content (添加一些内边距以便内容与边框有间距) */
+   a {
+      color: #a9a9a9; /* Light gray color for links (淡灰色) */
+      text-decoration: none; /* Remove underline from links (去掉下划线) */
+      opacity: 0.9; /* Set opacity to 90% (设置透明度为90%) */
+   }
+   a:hover {
+      color: #333; /* Change to dark gray on hover (悬停时变为深灰色) */
+      text-decoration: underline; /* Underline on hover (悬停时显示下划线) */
+   }
+}
+
+/* Header section (页头部分) */
+header {
+   grid-area: header; /* Assign this area to the grid layout (将此区域分配到网格布局中) */
+}
+
+/* Left column styles (左栏样式) */
+#leftcol {
+   grid-area: leftcol; /* Assign this area to the grid layout (将此区域分配到网格布局中) */
+   background-color: #000000; /* Black background (黑色背景) */
+
+   /* Notes section (Notes 部分) */
+   .Notes {
+      background-color: #e3a28e; /* Background color (背景颜色) */
+      h1 {
+         text-align: center; /* Center align the heading (标题居中) */
+      }
+      a {
+         color: #ffbee5; /* Pink color for links (粉色) */
+         text-decoration: none; /* Remove underline from links (去掉下划线) */
+      }
+      a:hover {
+         text-decoration: underline; /* Underline on hover (悬停时显示下划线) */
+      }
+   }
+
+   /* Upcoming Events section (Upcoming Events 部分) */
+   .Upcoming {
+      background-color: #d1bb72; /* Background color (背景颜色) */
+      text-align: center; /* Center align the text (文字居中) */
+   }
+
+   /* Specific text styles for left section (左侧特定文字样式) */
+   .sp_Ltext {
+      font-family: 'woff_left_h'; /* Apply custom font (应用自定义字体) */
+      font-size: 3em; /* Set font size (设置字体大小) */
+   }
+}
+
+/* Add padding to all direct child elements except images (为所有直接子元素添加内边距，除了图片) */
+#leftcol > *:not(img) {
+   padding: 10px; /* Add padding (添加内边距) */
+}
+
+/* Right column styles (右栏样式) */
+#rightcol {
+   grid-area: rightcol; /* Assign this area to the grid layout (将此区域分配到网格布局中) */
+   background-color: #582d5a; /* Purple background (紫色背景) */
+
+   h2 {
+      margin-left: 10%; /* Add left margin to headings (为标题添加左边距) */
+   }
+
+   /* List styles (列表样式) */
+   ul {
+      list-style-type: none; /* Remove list markers (去掉列表项前的点) */
+   }
+
+   /* Specific text styles for right section (右侧特定文字样式) */
+   .sp_Rtext {
+      font-family: 'woff_right_h'; /* Apply custom font (应用自定义字体) */
+   }
+
+   /* Georgia text styles (Georgia 字体样式) */
+   .Georgia-text {
+      font-family: 'Georgia'; /* Apply Georgia font (应用 Georgia 字体) */
+      font-size: 24px; /* Set font size (设置字体大小) */
+      margin-top: 100px; /* Add top margin (添加顶部边距) */
+      color: #e7aeee; /* Set text color (设置文字颜色) */
+   }
+
+   /* Link styles (超链接样式) */
+   a {
+      color: #a9a9a9; /* Light gray color for links (淡灰色) */
+      text-decoration: none; /* Remove underline from links (去掉下划线) */
+   }
+   a:hover {
+      color: #333; /* Change to dark gray on hover (悬停时变为深灰色) */
+      text-decoration: underline; /* Underline on hover (悬停时显示下划线) */
+   }
+
+   /* Blockquote styles with quotation marks (块引用样式，带引号) */
+   blockquote::before {
+      content: '“'; /* Add left quote before blockquote (在引用前添加引号) */
+      font-size: 2em; /* Set font size (设置字体大小) */
+      color: #e7aeee; /* Set color (设置颜色) */
+   }
+   blockquote::after {
+      content: '”'; /* Add right quote after blockquote (在引用后添加引号) */
+      font-size: 2em; /* Set font size (设置字体大小) */
+      color: #e7aeee; /* Set color (设置颜色) */
+   }
+}
+
+/* Footer styles (页脚样式) */
+footer {
+   grid-area: footer; /* Assign this area to the grid layout (将此区域分配到网格布局中) */
+   background-color: #4d464e; /* Background color (背景颜色) */
+   color: #fff; /* Text color (文字颜色) */
+   text-align: center; /* Center align the text (文字居中) */
+   padding: 10px 0; /* Add padding (添加内边距) */
+   font-size: 14px; /* Set font size (设置字体大小) */
+   position: relative; /* Set position (设置定位) */
+   bottom: 0; /* Set position from bottom (从底部设置位置) */
+}
